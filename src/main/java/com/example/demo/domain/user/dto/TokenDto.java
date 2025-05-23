@@ -7,5 +7,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class TokenDto {
 
+    private final String tokenAuthScheme;
     private final String token;
 }
