@@ -23,7 +23,7 @@ public class JwtProvider {
     private final UserRepository userRepository;
 
     // 토큰 생성
-    public String generateTokenBy(String email) {
+    public String generateToken(String email) {
         userRepository.findByEmail(email)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "사용자를 찾을 수 없습니다."));
 
