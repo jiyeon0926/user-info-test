@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -19,7 +20,7 @@ public class UserController {
 
     // 이메일 인증을 통해 토큰 발급
     @PostMapping("/auth/email")
-    public ResponseEntity<TokenDto> issueTokenByEmail(EmailReqDto emailReqDto) {
+    public ResponseEntity<TokenDto> issueTokenByEmail(@RequestBody EmailReqDto emailReqDto) {
         userService.issueTokenByEmail(emailReqDto.getEmail());
 
         return new ResponseEntity<>(HttpStatus.OK);
