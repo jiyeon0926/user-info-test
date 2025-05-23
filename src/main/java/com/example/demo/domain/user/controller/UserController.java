@@ -21,9 +21,9 @@ public class UserController {
     // 이메일 인증을 통해 토큰 발급
     @PostMapping("/auth/email")
     public ResponseEntity<TokenDto> issueTokenByEmail(@RequestBody EmailReqDto emailReqDto) {
-        userService.issueTokenByEmail(emailReqDto.getEmail());
+        TokenDto token = userService.issueTokenByEmail(emailReqDto.getEmail());
 
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(token, HttpStatus.OK);
     }
 
     // 토큰으로 사용자 정보 조회
