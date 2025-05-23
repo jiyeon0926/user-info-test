@@ -1,0 +1,17 @@
+package com.example.demo.domain.user.entity;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "info")
+public class User {
+
+    @Id
+    private Long id;
+
+    private String email;
+    private String name;
+    private String bookTitle;
+    private String author;
+    private String publisher;
+}
