@@ -1,6 +1,6 @@
-package com.example.demo.global.jwt;
+package com.example.demo.jwt;
 
-import com.example.demo.domain.user.repository.UserRepository;
+import com.example.demo.repository.UserRepository;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.security.Keys;

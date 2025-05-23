@@ -1,9 +1,9 @@
-package com.example.demo.domain.user.controller;
+package com.example.demo.controller;
 
-import com.example.demo.domain.user.dto.EmailReqDto;
-import com.example.demo.domain.user.dto.TokenDto;
-import com.example.demo.domain.user.dto.UserResDto;
-import com.example.demo.domain.user.service.UserService;
+import com.example.demo.dto.EmailReqDto;
+import com.example.demo.dto.TokenDto;
+import com.example.demo.dto.UserResDto;
+import com.example.demo.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

@@ -1,10 +1,10 @@
-package com.example.demo.domain.user.service;
+package com.example.demo.service;
 
-import com.example.demo.domain.user.dto.TokenDto;
-import com.example.demo.domain.user.dto.UserResDto;
-import com.example.demo.domain.user.entity.User;
-import com.example.demo.domain.user.repository.UserRepository;
-import com.example.demo.global.jwt.JwtProvider;
+import com.example.demo.dto.TokenDto;
+import com.example.demo.dto.UserResDto;
+import com.example.demo.entity.User;
+import com.example.demo.repository.UserRepository;
+import com.example.demo.jwt.JwtProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
