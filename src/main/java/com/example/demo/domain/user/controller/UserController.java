@@ -5,12 +5,10 @@ import com.example.demo.domain.user.dto.TokenDto;
 import com.example.demo.domain.user.dto.UserResDto;
 import com.example.demo.domain.user.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -28,9 +26,10 @@ public class UserController {
 
     // 토큰으로 사용자 정보 조회
     @GetMapping("/users/me")
-    public ResponseEntity<UserResDto> findUserByToken() {
-        userService.findUserByToken();
+    public ResponseEntity<UserResDto> findUserByToken(@RequestHeader(HttpHeaders.AUTHORIZATION) String header) {
+        String token = header.replace("Bearer ", "");
+        UserResDto user = userService.findUserByToken(token);
 
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(user, HttpStatus.OK);
     }
 }
